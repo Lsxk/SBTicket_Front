@@ -65,7 +65,8 @@
           type: 'GET',
           success: function (response) {
             console.log(response)
-            thisVue.$router.push({path: '/tickets'})
+            var tickets = response.data
+            thisVue.$router.push({name: 'tickets', params: {tickets: tickets}})
           }
         })
       },
